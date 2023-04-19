@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block css %}{% endblock %}
+
+{% block body %}
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Library Name</th>
+                    <th scope="col">Version</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for name,version in list.items %}
+                        
+                <tr class="list">
+                    <td name = 'Library_name'>{{name}}</td>
+                    <td>{{version}}</td>
+                    <td><button type="button" class="btn btn-primary">Update</button></td>
+                    <td><button type="button" class="btn btn-primary">Uninstall</button></td>
+                    <td>
+                        <button type="button" class="btn btn-outline-primary">Update</button>
+                        <button type="button" class="btn btn-outline-primary">Delete</button>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        
+{% endblock %}
+
+{% block js %}{% endblock %}
